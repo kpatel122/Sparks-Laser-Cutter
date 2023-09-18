@@ -1,0 +1,14 @@
+sub division: 1/8
+small pulley: 20T
+large pulley: 40T
+lead screw: Pitch 2mm Lead 8mm
+
+1600 steps per mm
+
+1600 * 2 (pulley ratio) = 3200
+3200/ 400(lead)
+
+=400
+
+https://blog.prusa3d.com/calculator_3416/
+https://reprap.org/forum/read.php?14,677333

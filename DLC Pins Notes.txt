@@ -1,0 +1,18 @@
+MKS        PSU
+S    ->    TTL   (~0-5 PWM signal)
+
+TTL  ->    GND   (Common GND)
+
+GPIO_NUM_25 ->  TH (trigger high)
+
+
+#define LASER_OUTPUT_PIN           GPIO_NUM_32
+#define LASER_ENABLE_PIN           GPIO_NUM_25
+
+GPIO_NUM_26 FEED_HOLD
+GPIO_NUM_33 CYCLE_START
+GPIO_NUM_27 RESET
+
+GPIO_NUM_18 or 23  DOOR
+
+

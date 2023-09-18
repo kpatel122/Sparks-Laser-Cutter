@@ -1,0 +1,6 @@
+ 
+https://github.com/bdring/Grbl_Esp32/wiki/Setting-Up-Spindles-and-Lasers
+
+https://github.com/bdring/Grbl_Esp32/wiki/Spindle-Types
+
+http://wiki.fluidnc.com/en/hardware/3rd-party/MKS_DLC32

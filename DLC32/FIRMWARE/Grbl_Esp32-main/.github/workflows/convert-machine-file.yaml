@@ -1,0 +1,81 @@
+name: Convert to FluidNC from Issue
+on:
+  issues:
+    types:
+      - opened
+jobs:
+  convert-from-issue:
+    if: contains(github.event.issue.title, 'Translate Machine.h')
+    runs-on: ubuntu-20.04
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/checkout@master
+        with:
+          repository: bdring/Grbl_Esp32
+          ref: refs/heads/DumpConfig
+
+      - name: get attachment
+        id: download
+        run: |
+          url=($(echo $body | awk -v RS=\( -v FS=\) 'NR>1{print $1}' ))
+          curl -OL $url
+          echo "file_path=${url##*/}" >> $GITHUB_ENV
+        env:
+          body: ${{github.event.issue.body}}
+
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache PlatformIO
+        uses: actions/cache@v3
+        with:
+          path: ~/.platformio
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+
+      - name: Install PlatformIO
+        run: |
+          python -m pip install --upgrade pip
+          pip install --upgrade platformio
+          
+      - name: Convert File
+        run: |
+          mv $file_path Grbl_Esp32/src/Machines/convert-job.h
+          python convert-machine.py convert-job.h
+          echo 'file_content<<EOF' >> $GITHUB_ENV
+          cat yaml/convert-job.yaml >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
+
+      - name: Report errors
+        if: failure()
+        uses: peter-evans/create-or-update-comment@40bf395e0ae447ac33928e8d9d1312c104175150
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Dear ${{ github.event.issue.user.login }},
+            The attempt to convert your machine header-file ${{ env.file_path }} into a FluidNc yaml file
+            failed due to one of the following possibilities:
+              1. Your machine file had an error.  This can happen if you use an old machine file that
+                 will not compile with the latest version of Grbl_Esp32
+              2. There is a bug in the converter program.
+            If you cannot resolve the problem, please contact us on Discord - https://discord.gg/MDsRDeNsTE
+
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@40bf395e0ae447ac33928e8d9d1312c104175150
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Dear ${{ github.event.issue.user.login }},
+            we converted your machine header-file ${{ env.file_path }} into a corresponding fluidNc yaml-file. 
+            Please copy the following content into your `config.yaml` file and upload the file to your esp32.
+            ```yaml 
+            ${{ env.file_content }} 
+            ```

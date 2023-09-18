@@ -1,0 +1,245 @@
+{
+    "Name": "GRBL",
+    "Settings": [
+        {
+            "Desc": "Status: Position reporting ($10)",
+            "ID": "0xa0000",
+            "Value": "Machine Position"
+        },
+        {
+            "Desc": "Status: Show buffer data ($10)",
+            "ID": "0xa0001",
+            "Value": false
+        },
+        {
+            "Desc": "Junction deviation (mm) ($11)",
+            "ID": "0xb",
+            "Value": 0.009999999776482582
+        },
+        {
+            "Desc": "Arc tolerance (mm) ($12)",
+            "ID": "0xc",
+            "Value": 0.0020000000949949026
+        },
+        {
+            "Desc": "Report inches ($13)",
+            "ID": "0xd",
+            "Value": false
+        },
+        {
+            "Desc": "Soft limits ($20)",
+            "ID": "0x14",
+            "Value": false
+        },
+        {
+            "Desc": "Hard limits ($21)",
+            "ID": "0x15",
+            "Value": true
+        },
+        {
+            "Desc": "Homing cycle ($22)",
+            "ID": "0x16",
+            "Value": true
+        },
+        {
+            "Desc": "Homing feed rate (slow) (mm/min) ($24)",
+            "ID": "0x18",
+            "Value": 500
+        },
+        {
+            "Desc": "Homing seek rate (fast) (mm/min) ($25)",
+            "ID": "0x19",
+            "Value": 1000
+        },
+        {
+            "Desc": "Homing debounce (ms) ($26)",
+            "ID": "0x1a",
+            "Value": 250
+        },
+        {
+            "Desc": "Homing pull-off (mm) ($27)",
+            "ID": "0x1b",
+            "Value": 5
+        },
+        {
+            "Desc": "Max spindle speed (RPM), S-Value max ($30)",
+            "ID": "0x1e",
+            "Value": 100
+        },
+        {
+            "Desc": "Min spindle speed (RPM), S-Value min ($31)",
+            "ID": "0x1f",
+            "Value": 0
+        },
+        {
+            "Desc": "Laser mode enable ($32)",
+            "ID": "0x20",
+            "Value": true
+        },
+        {
+            "Desc": "Step pulse (microseconds) ($0)",
+            "ID": "0x0",
+            "Value": 10
+        },
+        {
+            "Desc": "Step idle delay (ms) ($1)",
+            "ID": "0x1",
+            "Value": 25
+        },
+        {
+            "Desc": "Step enable invert ($4)",
+            "ID": "0x4",
+            "Value": false
+        },
+        {
+            "Desc": "Limit pins invert ($5)",
+            "ID": "0x5",
+            "Value": false
+        },
+        {
+            "Desc": "Probe pin invert ($6)",
+            "ID": "0x6",
+            "Value": false
+        },
+        {
+            "Desc": "X Step pin invert ($2)",
+            "ID": "0x20000",
+            "Value": false
+        },
+        {
+            "Desc": "X Direction pin invert ($3)",
+            "ID": "0x30000",
+            "Value": true
+        },
+        {
+            "Desc": "X Homing direction invert ($23)",
+            "ID": "0x170000",
+            "Value": true
+        },
+        {
+            "Desc": "X Steps per mm ($100)",
+            "ID": "0x64",
+            "Value": 80
+        },
+        {
+            "Desc": "X Max rate (mm/min) ($110)",
+            "ID": "0x6e",
+            "Value": 80000
+        },
+        {
+            "Desc": "X Accleration (mm/sec^2) ($120)",
+            "ID": "0x78",
+            "Value": 1000
+        },
+        {
+            "Desc": "X Max travel (mm) ($130)",
+            "ID": "0x82",
+            "Value": 605
+        },
+        {
+            "Desc": "Y Step pin invert ($2)",
+            "ID": "0x20001",
+            "Value": false
+        },
+        {
+            "Desc": "Y Direction pin invert ($3)",
+            "ID": "0x30001",
+            "Value": true
+        },
+        {
+            "Desc": "Y Homing direction invert ($23)",
+            "ID": "0x170001",
+            "Value": true
+        },
+        {
+            "Desc": "Y Steps per mm ($101)",
+            "ID": "0x65",
+            "Value": 80
+        },
+        {
+            "Desc": "Y Max rate (mm/min) ($111)",
+            "ID": "0x6f",
+            "Value": 80000
+        },
+        {
+            "Desc": "Y Accleration (mm/sec^2) ($121)",
+            "ID": "0x79",
+            "Value": 1000
+        },
+        {
+            "Desc": "Y Max travel (mm) ($131)",
+            "ID": "0x83",
+            "Value": 410
+        },
+        {
+            "Desc": "Z Step pin invert ($2)",
+            "ID": "0x20002",
+            "Value": false
+        },
+        {
+            "Desc": "Z Direction pin invert ($3)",
+            "ID": "0x30002",
+            "Value": false
+        },
+        {
+            "Desc": "Z Homing direction invert ($23)",
+            "ID": "0x170002",
+            "Value": false
+        },
+        {
+            "Desc": "Z Steps per mm ($102)",
+            "ID": "0x66",
+            "Value": 80
+        },
+        {
+            "Desc": "Z Max rate (mm/min) ($112)",
+            "ID": "0x70",
+            "Value": 3000
+        },
+        {
+            "Desc": "Z Accleration (mm/sec^2) ($122)",
+            "ID": "0x7a",
+            "Value": 10
+        },
+        {
+            "Desc": "Z Max travel (mm) ($132)",
+            "ID": "0x84",
+            "Value": 50
+        },
+        {
+            "Desc": "A Step pin invert ($2)",
+            "ID": "0x20003",
+            "Value": false
+        },
+        {
+            "Desc": "A Direction pin invert ($3)",
+            "ID": "0x30003",
+            "Value": false
+        },
+        {
+            "Desc": "A Homing direction invert ($23)",
+            "ID": "0x170003",
+            "Value": false
+        },
+        {
+            "Desc": "A Steps per mm ($103)",
+            "ID": "0x67",
+            "Value": 100
+        },
+        {
+            "Desc": "A Max rate (mm/min) ($113)",
+            "ID": "0x71",
+            "Value": 1000
+        },
+        {
+            "Desc": "A Accleration (mm/sec^2) ($123)",
+            "ID": "0x7b",
+            "Value": 200
+        },
+        {
+            "Desc": "A Max travel (mm) ($133)",
+            "ID": "0x85",
+            "Value": 300
+        }
+    ]
+}
