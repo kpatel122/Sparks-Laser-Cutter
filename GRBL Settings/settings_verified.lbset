@@ -44,12 +44,12 @@
         {
             "Desc": "Homing feed rate (slow) (mm/min) ($24)",
             "ID": "0x18",
-            "Value": 500
+            "Value": 1000
         },
         {
             "Desc": "Homing seek rate (fast) (mm/min) ($25)",
             "ID": "0x19",
-            "Value": 1000
+            "Value": 3000
         },
         {
             "Desc": "Homing debounce (ms) ($26)",
@@ -124,12 +124,12 @@
         {
             "Desc": "X Max rate (mm/min) ($110)",
             "ID": "0x6e",
-            "Value": 30000
+            "Value": 10000
         },
         {
             "Desc": "X Accleration (mm/sec^2) ($120)",
             "ID": "0x78",
-            "Value": 100
+            "Value": 1000
         },
         {
             "Desc": "X Max travel (mm) ($130)",
@@ -159,12 +159,12 @@
         {
             "Desc": "Y Max rate (mm/min) ($111)",
             "ID": "0x6f",
-            "Value": 30000
+            "Value": 10000
         },
         {
             "Desc": "Y Accleration (mm/sec^2) ($121)",
             "ID": "0x79",
-            "Value": 100
+            "Value": 1000
         },
         {
             "Desc": "Y Max travel (mm) ($131)",
