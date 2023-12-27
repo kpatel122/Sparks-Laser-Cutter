@@ -39,7 +39,7 @@
     #define BOARD_NAME              "Board:MKS DLC32 CNC V1.0"
 #endif
 
-#define FW_NAME                     "V0.5- SD Card Enabled"
+#define FW_NAME                     "Sparks V0.5- SD Card Enabled"
 
 
 #ifdef N_AXIS
