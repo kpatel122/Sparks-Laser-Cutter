@@ -32,14 +32,14 @@
 
 // #define USE_BL_TOUCH
 
-#define MACHINE_NAME                "MKS DLC32 Sparks V0.4"
+#define MACHINE_NAME                "MKS DLC32 2.1 Sparks- V0.5"
 #ifdef USE_BOARD_V2_0
     #define BOARD_NAME              "Board:MKS DLC32 CNC V2.0"
 #else 
     #define BOARD_NAME              "Board:MKS DLC32 CNC V1.0"
 #endif
 
-#define FW_NAME                     "V2.1(8M.H35.20220421)"
+#define FW_NAME                     "V0.5- SD Card Enabled"
 
 
 #ifdef N_AXIS
@@ -83,47 +83,33 @@
 #endif
 
 // Laser pin set
-//#define SPINDLE_TYPE                SpindleType::PWM
 #define SPINDLE_TYPE SpindleType::LASER
 
 //#ifdef USE_BOARD_V2_0
-
-//#define SPINDLE_OUTPUT_PIN          GPIO_NUM_32
 #define LASER_OUTPUT_PIN           GPIO_NUM_32 //PWM output 'S' on board
 #define LASER_ENABLE_PIN           GPIO_NUM_25
 
-/*
-#define CONTROL_FEED_HOLD_PIN      GPIO_NUM_26
-*/
-#define CONTROL_CYCLE_START_PIN    GPIO_NUM_18 //WORKS
-#define CONTROL_RESET_PIN          GPIO_NUM_23 //WORKS
-
+ 
+//control buttons
+#define CONTROL_CYCLE_START_PIN IIC_SCL 
 #define CONTROL_FEED_HOLD_PIN      GPIO_NUM_33 //WORKS
+//hardware reset used
+
 
 //27,26,5 dont generate interupts
 
 //NOTE to make  GPIO_NUM_18 GPIO_NUM_23 and GPIO_NUM_5 (5 outputs PWM at boot) available SD card has been disabled in config.h i.e. //#define ENABLE_SD_CARD
 
 
-//LASER PSU INTERFACE
-//#define SPINDLE_ENABLE_PIN GPIO_NUM_25 //works with M3 constant power mode
-
-//#define SPINDLE_DIR_PIN GPIO_NUM_26
-
-
-//#else
-//#define SPINDLE_OUTPUT_PIN          GPIO_NUM_22
-//#endif
-
 #define X_LIMIT_PIN                 GPIO_NUM_36
 #define Y_LIMIT_PIN                 GPIO_NUM_35
 
 #if defined(USR_Z_MOTOR)
-#define Z_LIMIT_PIN                 GPIO_NUM_34
+#define Z_LIMIT_PIN                 GPIO_NUM_34 //unused- no z limit
 #endif
 
 #ifdef USE_BOARD_V2_0
-#define PROBE_PIN                   GPIO_NUM_22    
+#define PROBE_PIN                   GPIO_NUM_22 //unused   
 #else
 #define PROBE_PIN                   GPIO_NUM_2    
 #endif
@@ -143,8 +129,6 @@
 
 #define IIC_SCL                     GPIO_NUM_4
 #define IIC_SDA                     GPIO_NUM_0
-
-#define COOLANT_FLOOD_PIN           IIC_SCL
 
 //sd card spi
 #define GRBL_SPI_SCK 			    GPIO_NUM_14
