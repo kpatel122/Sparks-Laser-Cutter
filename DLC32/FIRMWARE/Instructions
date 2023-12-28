@@ -1,3 +1,13 @@
+Connecting from AP to Router
+Change SSID
+Set PW
+Change Radio Mode to Client Station
+New IP can be found from router admin panel or connect via usb and startup message has the ip info
+
+
+
+Wiki: https://github.com/bdring/Grbl_Esp32/wiki/Compiling-the-firmware
+
 
 
 Option 1. Platform.io
