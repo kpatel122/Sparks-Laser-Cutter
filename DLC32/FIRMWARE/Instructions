@@ -1,1 +1,13 @@
+
+
+Option 1. Platform.io
+VS code-> Install platform.io extension
+"Cant find python error"-> sudo apt install python3-venv
+Install ESP32 boards 2.0.11
+
+VS Code->Build
+VS Code->Upload (no need to change COM port it scans automatically)
+
+
+Option 2. Arduino
 https://github.com/bdring/Grbl_Esp32/wiki/Compiling-with-Arduino-IDE
