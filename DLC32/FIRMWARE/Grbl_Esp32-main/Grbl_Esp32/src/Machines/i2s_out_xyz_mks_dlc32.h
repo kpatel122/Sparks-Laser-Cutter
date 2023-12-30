@@ -32,7 +32,7 @@
 
 // #define USE_BL_TOUCH
 
-#define MACHINE_NAME                "MKS DLC32 2.1 Sparks- V0.5"
+#define MACHINE_NAME                "MKS DLC32 2.1 Sparks- V0.6"
 #ifdef USE_BOARD_V2_0
     #define BOARD_NAME              "Board:MKS DLC32 CNC V2.0"
 #else 
@@ -163,8 +163,8 @@
 #define DEFAULT_HOMING_CYCLE_1              0           // (bit(Z_AXIS))        /* If you want star Z axis, select (bit(Z_AXIS)) */
 #define DEFAULT_HOMING_ENABLE           	1           // false
 #define DEFAULT_HOMING_DIR_MASK         	1           // move positive dir Z,negative X,Y
-#define DEFAULT_HOMING_FEED_RATE        	300.0       // mm/min
-#define DEFAULT_HOMING_SEEK_RATE        	1000.0      // mm/min
+#define DEFAULT_HOMING_FEED_RATE        	1000.0       // mm/min
+#define DEFAULT_HOMING_SEEK_RATE        	3000.0      // mm/min
 #define DEFAULT_HOMING_DEBOUNCE_DELAY   	250         // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF          	1.0         // mm
 
@@ -179,15 +179,15 @@
 
 #define DEFAULT_X_STEPS_PER_MM 80.0
 #define DEFAULT_Y_STEPS_PER_MM 80.0
-#define DEFAULT_Z_STEPS_PER_MM 80.0
+#define DEFAULT_Z_STEPS_PER_MM 400.0
 
-#define DEFAULT_X_MAX_RATE 6000.0 // mm/s
-#define DEFAULT_Y_MAX_RATE 6000.0 // mm/s
-#define DEFAULT_Z_MAX_RATE 6000.0 // mm/s
+#define DEFAULT_X_MAX_RATE 10000.0 // mm/min
+#define DEFAULT_Y_MAX_RATE 10000.0 // mm/min
+#define DEFAULT_Z_MAX_RATE 10000.0 // mm/min
 
-#define DEFAULT_X_ACCELERATION 500.0 // mm/sec^2
-#define DEFAULT_Y_ACCELERATION 500.0 // mm/sec^2
-#define DEFAULT_Z_ACCELERATION 500.0 // mm/sec^2
+#define DEFAULT_X_ACCELERATION 1000.0 // mm/sec^2
+#define DEFAULT_Y_ACCELERATION 1000.0 // mm/sec^2
+#define DEFAULT_Z_ACCELERATION 10.0 // mm/sec^2
 
 #define DEFAULT_X_MAX_TRAVEL 450.0 // mm NOTE: Must be a positive value.
 #define DEFAULT_Y_MAX_TRAVEL 450.0 // mm NOTE: Must be a positive value.
@@ -195,7 +195,7 @@
 
 #define DEFAULT_SPINDLE_FREQ        1920// 8000.0   // 1KHz
 //#define DEFAULT_LASER_FULL_POWER    1000
-#define DEFAULT_LASER_FULL_POWER    100
+#define DEFAULT_LASER_FULL_POWER    100 //PWM signal
 //#define DEFAULT_SPINDLE_MAX_VALUE   1000
 #define DEFAULT_SPINDLE_MAX_VALUE   100
 #define DEFAULT_SPINDLE_MIN_VALUE   0

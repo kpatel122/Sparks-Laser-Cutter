@@ -189,7 +189,7 @@
         {
             "Desc": "Z Steps per mm ($102)",
             "ID": "0x66",
-            "Value": 80
+            "Value": 400
         },
         {
             "Desc": "Z Max rate (mm/min) ($112)",
